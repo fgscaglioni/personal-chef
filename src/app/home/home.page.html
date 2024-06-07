@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div class="background"></div>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="10" size-lg="6">
+        <h1 class="vegan-style-font" style="font-size: 4rem; text-align: center; color: #b54427;">Personal Chef
+        </h1>
+        <h2>Desperte o chef que há em você!</h2>
+        <p>Cansado de refeições sem graça e repetitivas? Deseja explorar novos sabores sem sair do conforto de casa?
+          Então, prepare-se para uma experiência gastronômica inesquecível com o <b>Personal Chef</b>, seu
+          serviço de
+          chef pessoal!</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="10" size-lg="6">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-input placeholder="Liste os ingredientes que estão na sua geladeira..."
+              formControlName="ingredients"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-select aria-label="Modelo" interface="popover" label="Minha formação é 👉" formControlName="model">
+              <ion-select-option value="GOOGLE">Google Gemini</ion-select-option>
+              <ion-select-option value="OPEN_AI">OpenAi ChatGPT</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-progress-bar type="indeterminate" *ngIf="loading"></ion-progress-bar>
+          <ion-button block color="oliva" type="submit" [disabled]="loading">
+            {{ (loading) ? 'Buscando a melhor receita' : 'Me diga o que preparar' }}
+          </ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="10" size-lg="6">
+        <div [innerHtml]="htmlResponse"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="oliva" (click)="about()">
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -1,0 +1,15 @@
+services:
+  app:
+    container_name: personal-chef-app
+    working_dir: /home/node/app
+    image: node:20.12-alpine
+    user: 1000:1000
+    restart: always
+    command: sh -c "npm i && npm start"
+    ports:
+      - 4200:4200
+      - 35729:35729
+    volumes:
+      - .:/home/node/app
+    environment:
+      STORAGE: /var/www/storage/

@@ -1,13 +1,15 @@
 {
   "name": "personal-chef",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "description": "An AI project to help people to cook",
+  "version": "1.0.0",
+  "author": "Fabrício Scaglioni",
+  "homepage": "https://github.com/fgscaglioni",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "PRODUCTION=false npm run config && ng serve --host 0.0.0.0 --disable-host-check",
+    "build": "PRODUCTION=true npm run config && ng build",
     "watch": "ng build --watch --configuration development",
+    "config": "node ./.scripts/config-env.js",
     "test": "ng test",
     "lint": "ng lint"
   },
@@ -21,13 +23,17 @@
     "@angular/platform-browser": "^17.0.2",
     "@angular/platform-browser-dynamic": "^17.0.2",
     "@angular/router": "^17.0.2",
+    "@google/generative-ai": "^0.11.3",
     "@ionic/angular": "^8.0.0",
     "ionicons": "^7.0.0",
+    "openai": "^4.47.1",
     "rxjs": "~7.8.0",
+    "showdown": "^2.1.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^17.0.2",
     "@angular-devkit/build-angular": "^17.0.0",
     "@angular-eslint/builder": "^17.0.0",
     "@angular-eslint/eslint-plugin": "^17.0.0",
@@ -38,7 +44,9 @@
     "@angular/compiler-cli": "^17.0.2",
     "@angular/language-service": "^17.0.2",
     "@ionic/angular-toolkit": "^11.0.1",
+    "@ionic/cli": "^7.2.0",
     "@types/jasmine": "~5.1.0",
+    "@types/showdown": "^2.0.6",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.57.0",
@@ -47,12 +55,13 @@
     "eslint-plugin-prefer-arrow": "1.2.2",
     "jasmine-core": "~5.1.0",
     "jasmine-spec-reporter": "~5.0.0",
+    "javascript-obfuscator": "^4.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.2.2"
-  },
-  "description": "An Ionic project"
+    "typescript": "~5.2.2",
+    "webpack-obfuscator": "^3.5.1"
+  }
 }

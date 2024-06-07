@@ -1,2 +1,21 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+  --ion-font-family: "Vollkorn", serif;
+
+  --ion-color-oliva: #709b16;
+  --ion-color-oliva-rgb: 112, 155, 22;
+  --ion-color-oliva-contrast: #ffffff;
+  --ion-color-oliva-contrast-rgb: 0, 0, 0;
+  --ion-color-oliva-shade: #638813;
+  --ion-color-oliva-tint: #7ea52d;
+}
+.ion-color-oliva {
+  --ion-color-base: var(--ion-color-oliva);
+  --ion-color-base-rgb: var(--ion-color-oliva-rgb);
+  --ion-color-contrast: var(--ion-color-oliva-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-oliva-contrast-rgb);
+  --ion-color-shade: var(--ion-color-oliva-shade);
+  --ion-color-tint: var(--ion-color-oliva-tint);
+}

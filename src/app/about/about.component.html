@@ -1,0 +1,61 @@
+<ion-content class="ion-padding">
+
+
+  <section>
+    <h2>Sobre o app</h2>
+    <p>Este aplicativo foi desenvolvido com o objetivo de aprender a utilizar de forma prática as APIs do <a
+        href="https://ai.google.dev/gemini-api/docs/get-started/node" target="_blank">Google</a> e da
+      <a href="https://platform.openai.com/docs/api-reference" target="_blank">OpenAI</a>, além de empregar as
+      tecnologias <a href="https://angular.dev/" target="_blank" rel="noopener noreferrer">Angular</a> e <a
+        href="https://ionicframework.com/" target="_blank" rel="noopener noreferrer">Ionic</a>.
+    </p>
+    <p> O código dessa aplicação está disponível <a href="https://github.com/fgscaglioni/personal-chef">aqui</a></p>
+  </section>
+
+  <section>
+
+    <h2>Sobre mim</h2>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of a person's head"
+              src="https://gravatar.com/avatar/f759a382d42cfc1bdc9bb13823ce7f84" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Fabrício Scaglioni</h2>
+            <p>&#64;fgscaglioni</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Meu nome é <strong>Fabrício</strong>, sou programador, gosto de trabalhar com tecnologias para web e de
+          aprender coisas novas.</p>
+        <p>Dúvidas ou sugestões? Utilize os links abaixo para me contatar</p>
+
+        <ion-chip (click)="navigateTo('https://github.com/fgscaglioni')">
+          <ion-icon name="logo-github"></ion-icon>
+          <ion-label>Github</ion-label>
+        </ion-chip>
+
+        <ion-chip (click)="navigateTo('https://www.linkedin.com/in/fgscaglioni/')">
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <ion-label>Linkedin</ion-label>
+        </ion-chip>
+
+        <ion-chip (click)="navigateTo('https://medium.com/@fgscaglioni')">
+          <ion-icon src="/assets/medium-icon.svg"></ion-icon>
+          <ion-label>Medium</ion-label>
+        </ion-chip>
+
+      </ion-card-content>
+
+
+
+
+    </ion-card>
+
+  </section>
+
+</ion-content>
