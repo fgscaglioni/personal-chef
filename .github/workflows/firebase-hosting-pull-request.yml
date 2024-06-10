@@ -12,14 +12,13 @@ jobs:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
-      - name: create env file
-        run: |
+      - uses: actions/checkout@v4
+      - run: |
           touch .env
           echo PRODUCTION=true >> .env
           echo GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }} >> .env
           echo OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} >> .env
-      - uses: actions/checkout@v4
-      - run: npm ci && npm run build
+          npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
