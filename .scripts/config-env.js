@@ -5,14 +5,17 @@ const colors = require('colors');
 require('dotenv').config()
 
 const run = () => {
+  const rootPath = path.join(__dirname, '..');
+  const envFile = path.join(rootPath, '.env');
+  const envExampleFile = path.join(rootPath, '.env.example');
   if (
     !process.env.GEMINI_API_KEY ||
     !process.env.OPENAI_API_KEY ||
     !process.env.PRODUCTION
   ) {
-    if (!fs.existsSync('/home/node/app/.env.example')) {
-      if (!fs.existsSync('/home/node/app/.env')) {
-        fs.copyFileSync('/home/node/app/.env.example', '/home/node/app/.env');
+    if (fs.existsSync(envExampleFile)) {
+      if (!fs.existsSync(envFile)) {
+        fs.copyFileSync(envExampleFile, envFile);
       }
     }
   }
